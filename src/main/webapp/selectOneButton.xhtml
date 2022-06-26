@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+   <title>Select One Button</title>
+</h:head>
+
+<h:body>
+   <h:form>
+      <p:growl id="msgs"/>
+      <h:panelGrid columns="2" cellpadding="5" style="margin-bottom: 10px">
+         <h:outputText value="Choose Language: "/>
+         <p:selectOneButton value="#{sob.option}">
+            <f:selectItem itemLabel="Java" itemValue="java"/>
+            <f:selectItem itemLabel="Python" itemValue="python"/>
+            <f:selectItem itemLabel="C++" itemValue="c++"/>
+         </p:selectOneButton>
+
+         <p:commandButton value="Submit" update="display" icon="ui-icon-check"/>
+         <p:spacer/>
+
+         <h:outputText value="Selected: "/>
+         <h:outputText id="display" value="#{sob.option}" style="font-weight: bold"/>
+      </h:panelGrid>
+   </h:form>
+</h:body>
+</html>

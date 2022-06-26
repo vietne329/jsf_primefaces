@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+   <title>Input Text</title>
+</h:head>
+
+<h:body>
+   <h2>Input Text Area Demo</h2>
+   <h:outputText value="Enter text:"/>
+   <p:spinner />
+   <h:form>
+      <p:inputTextarea rows="7" cols="50" completeMethod="#{autoComplete.results}" queryDelay="100" minQueryLength="1" />
+      <br/>
+      <p:inputTextarea rows="7" cols="30"/>
+      <br/>
+      <p:inputTextarea rows="7" cols="30"/>
+      <br/>
+      <p:inputTextarea rows="2" cols="20" counter="display" maxlength="10" counterTemplate="{0} characters remaining." autoResize="false"/>
+      <br/>
+      <h:outputText id="display"/>
+   </h:form>
+
+</h:body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Upload File</title>
+</h:head>
+
+<h:body>
+    <h:form enctype="multipart/form-data" style="width:900px">
+        <p:growl id="msg"/>
+        <p:fileUpload widgetVar="importFile" uploadLabel="Upload file" label="upload"  mode="advanced"
+                      allowTypes="/(\.|\/)(zip)$/"
+                      sizeLimit="5242880" invalidFileMessage="You just upload zip file only"
+                      invalidSizeMessage="You just ca upload file maximum 52MB"
+                      value="#{fileController.file}"
+                      fileUploadListener="#{fileController.fileUploadListener}" update="msg">
+        </p:fileUpload>
+    </h:form>
+</h:body>
+</html>
